@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="full">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Weather</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+</head>
+
+<body ng-app="weatherApp">
+    <div class="row search" ng-controller="WeatherController as weather">
+        <div class="col-sm-8 col-sm-offset-2">
+            <form role="form">
+                <div class="form-group">
+                    <input class="form-control" placeholder="City, State, Zip" type="text"  g-places-autocomplete ng-model="place" />
+
+                </div>
+                <!-- <pre>{{place | json}}</pre> -->
+                <div class="row top-25">
+                    <div class="col-sm-4 temp">{{ fahrenheit }}°F</div>
+                    <div class="col-sm-4 temp">{{ description }}</div>
+                    <div class="col-sm-4 temp location">{{ location }}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="../../bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="app/services/weatherFactory.js"></script>
+    <script src="app/services/locationFactory.js"></script>
+    <script src="app/controllers/WeatherController.js"></script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-72805742-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+	color: #fff !important;
+    background: rgb(0, 168, 198);
+}
+
+.full {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.weather-container{
+	height: 50px;
+	width: 130px;
+}
+
+.weather-icon{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.top-25{
+    margin-top: 25px;
+}
+
+.temp{
+	display: inline-block;
+	font-size: 30px;
+	float: right;
+}
+
+
+
+
